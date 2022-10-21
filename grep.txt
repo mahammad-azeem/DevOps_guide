@@ -1,0 +1,295 @@
+Grep:
+
+
+
+
+
+
+
+grep = global regular expression search and print all lines containing it
+
+
+
+egrep = extended grep - used to search multiple patterns = is same as grep -E 
+
+
+
+e.g:  egrep “string1|string2|string” /path
+
+
+
+fgrep = fixed grep - used to search patterns where *, ^ etc are not treated as wildcards = is same as grep -F
+
+
+
+E.g: fgrep “*” /path 
+
+
+
+grep /path -e “string1”
+
+
+
+Meaning search the pattern string1 in /path 
+
+
+
+
+
+grep -A 5 “ERROR” file.txt
+
+
+
+Print 5 lines after the line that contains the pattern ERROR in file.txt
+
+
+
+grep -B 5 “ERROR” file.txt
+
+
+
+Print 5 lines before the line that contains the pattern ERROR in file.txt
+
+
+
+grep -C 5 “ERROR” file.txt
+
+
+
+Print 5 lines before and after the line that contains the pattern ERROR in file.txt
+
+
+
+grep -c “ERROR” file.txt
+
+
+
+Print number of times the pattern ERROR is present in file.txt
+
+
+
+grep —include=*.c  -e “string2” /path
+
+
+
+Search only files ending with .c containing the pattern string2 in /path
+
+
+
+grep —include=*.{c, html} -e “string3” /path
+
+
+
+Search only files ending with .c and .html containing the pattern string3 in /path
+
+
+
+grep —exclude=*.c -e “string1” /path
+
+
+
+Search files that contain the pattern string1 in /path excluding the file that end with .c 
+
+
+
+grep —exclude=*{.c, html} -e “string3” /path
+
+
+
+Search files that contain the pattern string1 in /path excluding the file that end with .c and .html
+
+
+
+grep —exclude-dir={dir1, dir2, *.folder} -e “string2” /path
+
+
+
+Search files that contain the pattern string2 in /path except the folder dir1, dir2 and ending with .folder
+
+
+
+grep -inlrRwvV switches meaning
+
+
+
+-I = Ignore case-sensitivity ( small aayii )
+
+-n = print line numbers
+
+-l = print only the file names that contains the search pattern
+
+-r or R = search by traversing folders / files recursively
+
+-w = match the whole word
+
+-v = search excluding the pattern specified after this switch
+
+-V = print grep version
+
+
+
+E.g:    grep -v “Hello” /path
+
+
+
+Search files in /path except the pattern Hello
+
+
+
+
+
+Find:
+
+
+
+
+
+
+
+
+
+
+
+ find . -name *.c -type f
+
+
+
+Find files that ends with .c 
+
+
+
+find / -name *.c -type d
+
+
+
+Find folders that ends with .c
+
+
+
+find . -name *.log -size +200M
+
+
+
+Find files whose name ends with .log from the present directory ( . ) and have size greater then 200 MB
+
+
+
+-size +200M = size greater then 200 MB
+
+-size +200K = size greater then 200 KB
+
+-size +200G = size greater then 200 GB
+
+
+
+
+
+find . -mtime -2s -type f
+
+
+
+Find files from the present directory ( . ) that were created 2 seconds ago
+
+
+
+-mtime -2s =  2 seconds ago
+
+-mtime -2h = 2 hours ago
+
+-mtime -2m = 2 minutes ago
+
+
+
+find . -group linux -type f
+
+
+
+Find files that belong to the group name linux
+
+
+
+find . -user mac -type f 
+
+
+
+Find files that belong to the user name mac
+
+
+
+find . -type f -name *.py -exec echo {} \;
+
+
+
+Find files whose name ends with .py from the present directory ( . ) and echo or print them to the console.
+
+
+
+find . -type f -name *.sh -exec grep -v “python” {} \;
+
+
+
+Find files whose name ends with .sh but do not contain the word python in it.
+
+
+
+
+
+Sort:
+
+
+
+
+
+
+
+
+
+sort -n -r -c -u -M file.txt and sort -o output.txt filename.txt and sort -k 2n file.txt
+
+
+
+Sort contents of file.txt 
+
+
+
+-n = numerically
+
+-r = reverse order
+
+-c = checks if the file.txt is already sorted or not
+
+-u = sort and remove duplicates
+
+-M = sort by month name/s
+
+-o = sort the contents of filename.txt and write the output to output.txt
+
+-k = specify column  , 2n = specifies 2nd column numerically
+
+
+
+
+
+Unique:
+
+
+
+
+
+
+
+
+
+unique -c -u -d file.txt
+
+
+
+Print lines which are unique in file.txt
+
+
+
+-c = prints how many times the line is repeated
+
+-u = print only the unique lines
+
+-d = print only the repeated lines
