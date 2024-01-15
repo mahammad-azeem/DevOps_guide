@@ -20,7 +20,7 @@ Step 2. Once, the service is up and running
 > Now, copy the server ID and generate a trial license as per below instructions in next step.
 
 Step 3. Generate trial license
-Go to my.atlassian.com and log in with your Atlassian ID.
+Go to my.atlassian.com and log in with your Atlassian ID (Create one if no account exists).
 From the list of Atlassian products, select Jira Software > Data Center. 
 Fill out the form with your organization's name and server id from Step 2.
 Select Generate license and copy this license text.
