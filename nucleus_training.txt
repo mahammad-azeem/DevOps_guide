@@ -11,8 +11,6 @@ You will be asked to enter reason and your login password few times during the i
 Choose custom installation (2nd option)
 Choose ports as jira: 8000 and control port: 8005 and click next (let other paths be default as it is) and install
 
-
-
 Step 2. Once, the service is up and running
 > Jira will be launched at http://localhost:8000 in a browser
 > Choose, I'll setup by myself (for database setup)
@@ -20,7 +18,7 @@ Step 2. Once, the service is up and running
 > Now, copy the server ID and generate a trial license as per below instructions in next step.
 
 Step 3. Generate trial license
-Go to my.atlassian.com and log in with your Atlassian ID.
+Go to my.atlassian.com and log in with your Atlassian ID (Create one if no account exists).
 From the list of Atlassian products, select Jira Software > Data Center. 
 Fill out the form with your organization's name and server id from Step 2.
 Select Generate license and copy this license text.
@@ -39,7 +37,7 @@ Now, wait for the final installation setup to be completed.
 Step 7. Now, choose language and avatar and in next screen click on create new project by choosing any project type scrum/kanban/project management.. etc and click Next and now keyin the project name and key (must be unique) and clikc Submit.
 
 Step 8.
-Try out the following
+Explore about / Try out the following
 a. Project/Issue Types/workflows/screens/field configurations etc
 b. Create project
 c. Create / update fields
