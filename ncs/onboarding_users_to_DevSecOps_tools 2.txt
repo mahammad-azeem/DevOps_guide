@@ -1,0 +1,68 @@
+USER ONBOARDING STEPS FOR JIRA:
+
+1.	User need to get the id/username created and reset password from VDI for the first time.
+2.	User need to apply for Jira access via IGA by adding username to “sg_usp_ujr_cmn” AD group by default and any other AD groups for which he/she wants access via IGA.
+3.	User need to wait for at least 1 hour (The AD settings in Jira sync the users/groups details every 1 hour), for getting access/login to Jira.
+4.	Now, user can login and check his/her access to Jira.
+
+NOTE: If step #1 is not done and user tries to login to Jira using the default password set in IGA, the account gets locked.
+
+If user had Jira access before but unable to login now, then
+please verify if user id is not locked in Business AD and follow instructions from Step #2, indicated above.
+
+Any user who has completed step #1, can request for Jira access by following instructions from Step 2 onwards.
+
+For access to SCRN2 Jira project please drop an email to PMO with below
+details: (cc: Yan Ru/Ajith/Azeem Mahammad/Fernando/Xander/Leow/Pamidu)
+
+Hi Team,
+Please grant "c_username1,c_username2,username3" access to SCRN2 Jira project.
+
+Regarding applying Jira license:
+
+Any user part of Jira licensed group will have Jira license applied. Jira has an option to mark any group/s (local/AD) as Jira licensed group (“SOFTWARE”). “sg_usp_ujr_cmn” is one of the AD group marked as Jira licensed group. So hence, request all user who need to access to Jira must get their usernames added to “sg_usp_ujr_cmn” group by default and other AD groups as required as indicated in Step #2.
+
+
+USER ONBOARDING STEPS FOR CONFLUENCE:
+
+1. User need to get the id/username created and reset password from VDI for the first time.
+2. User need to wait for at least 1 hour (The AD settings in Confluence sync the users/groups details every 1 hour), for login to Confluence (NOTE: User can login but cannot use confluence).
+3. User need to apply for Confluence space/s access via IGA by adding username to "sg_usp_ucf_cmn" AD group by default and other AD groups.
+4. User to wait for at least 1 hour and then verify his/her access
+
+Regarding applying Confluence license.
+
+Any user part of Confluence licensed group will have Confluence license applied. Confluence has settings to configure any group/s (local/AD) as Confluence licensed group. “sg_usp_ucf_cmn” is one of the AD group marked as licensed group.
+
+
+NOTE: If step #1 is not done and user tries to login to Jira using the default password set in IGA, the account gets locked.
+
+If user had Confluence access before but unable to login now, then please verify if user id is not locked in Business AD and follow instructions from Step #2, indicated above.
+
+Any user who has completed step #1, can request for Confluence access by following instructions from Step 2 onwards.
+
+
+USER ONBOARDING STEPS FOR JENKINS:
+
+1. User need to get the id/username created and reset password from VDI for the first time.
+2. User need to get their id/username added to "sg_usp_ujk_extr" AD group and other AD groups (if required) via IGA.
+3. Verify if you are able to login to Jenkins.
+
+Note:
+If user had Jenkins access before but unable to login now, then please verify if user id is not locked in Business AD and follow instructions from Step #2, indicated above.
+
+Below is applicable for Non-Prod Jenkins only as of now.
+For SCRN2 project related Jenkins job access, make sure steps 1/2/3 above are completed. Then, drop an below email to DevSecOps team(cc:YanRu Xu/Ajith) to grant access to SCRN2 jenkins job.
+
+Hi Team,
+Please grant "c_username" access to trigger below Jenkins job.
+Dashboard > Automation > Grant SCRN2 Jira Access.
+
+USER ONBOARDING FOR GITLAB:
+
+1. User need to get the id/username created and reset password from VDI for the first time.
+2. Request IGA team to create your businees AD username/account, in common infra AD and get the request approved in IGA.
+3. Try to login to Gitlab, once your account is created in common infra AD.
+
+NOTE:
+Current, version of Gitlab doesn't support group based AD integration. Hence, username needs to be created in common infra AD.

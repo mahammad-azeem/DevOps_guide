@@ -1,0 +1,8 @@
+INSTALLING GITLAB-RUNNER AS A SERVICE IN LINUX:
+
+1) Regsiter gitlab runner
+2) sudo gitlab-runner install --user=bcssadmin --working-directory=/home/bcssadmin
+3) Take backup and Copy over the config.toml from /home/bcssadmin/.gitlab-runner into /etc/gitlab-runner/config.toml (sudo cp ..)
+4) sudo systemctl daemon-reload (Run "sudo systemctl status gitlab-runner" to see if gitlab-runner service enabled if not enable it using command sudo systemctl enable gitlab-runner)
+5) sudo systemctl start gitlab-runner
+6) Verify status of the service both in vm and in gitlab ui.

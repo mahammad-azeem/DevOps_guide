@@ -1,0 +1,98 @@
+RTC details
+https://jazz.net/downloads/elm/releases/7.0.2SR1 Download the web installer X86-64 
+Install ELM:
+1. Install Manager
+2. Jazz Server using default WAS Liberty
+3. Global configuration manager
+4. Jazz reporting service
+5. Rational engineering manager
+6. Link index 
+7. Trial keys Install SQL Server
+1. SQL Server express 2019, sql mgmt studio (https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?redirectedfrom=MSDN&view=sql-server-ver16), and sql jdbc driver (https://www.microsoft.com/en-us/download/details.aspx?id=54671)
+2. ELM Jenkins plugin Post installation:
+1. Run Jazz server as Windows service. Default login to Jazz Server: ADMIN / ADMIN
+2. User registry using Liberty basic registry
+3. Migrate DB to SQL Server express (https://jazz.net/sandbox01-clmhelp/index.jsp?re=1&topic=/com.ibm.rational.clm.doc/helpindex_clm.html&scope=null) Install Jenkins
+1. Jenkins 2.277.1 LTS with Java 8
+2. Team Concert plugin 2.4.1 (https://plugins.jenkins.io/teamconcert/) Additional installation:
+1. IBM EWM client
+2. IBM EWM shell Advanced setup:
+1. Install IBM HTTP Server
+2. Proxy Jazz server port 9944 with IBM HTTP server port 443 -- Server:
+RTC Server: [TO BE PROVIDED once you are ready]
+Administrator / ??? -- 
+Product dochttps://jazz.net/sandbox01-clmhelp/index.jsp
+
+####################################################################################################################################################
+
+IBM INSTALLATION MANAGER:
+
+https://www.youtube.com/watch?v=6ACgwfE5rBY
+
+Dowload and install JDK 1.8 from https://adoptium.net/temurin/releases/?version=8
+See below for jdk installation and setting java home in environmental variables
+(https://www.youtube.com/watch?v=XuMrEDA8cAI&t=5s from 1 - 5 minute)
+
+1. Download 7 zip app to extract binaries during installation process
+2. Download Notepad++  to edit any config files or can use notepad also
+3. Create an account on jazz.net and download IBM installation manager
+4. Once account is created go to jazz.net > Downloads > choose "Engineering LifeCycle Management" > choose the version you want to install (7.0.2SR1) >
+Select "All Downloads" > scroll down to IBM installation repositories and click on the IBM installation manager 1.x.x > in next page choose windows server
+bits 32/64 > then check on the "Agree to terms and conditions" box and click Download
+5. Once the zip file downloaded, extract the zip file > open the folder contents > right click on "install" >> Run as administrator (If the windows server
+system language is english) if not > open command prompt in administration mode and traverse to above path and run "install.exe -nl en"
+6. Once, installation windows opens choose the path to install > click install and once done > click "Restart installation manager" and then verify if
+installed by searching the IBM installation manager in windows search.
+
+IBM ELM INSTALLATION:
+
+https://www.youtube.com/watch?v=9F0xmIp1PcI
+
+1. Go to jazz.net > Downloads > choose "Engineering LifeCycle Management" > choose the version you want to install (7.0.2SR1) >
+Select "All Downloads" > scroll down to IBM installation repositories and download "Jazz Team Server" (Download "Jazz authorization server" for actual
+installation on GCC) > then check on the "Agree to terms and conditions" box and click Download
+2. Once the zip file downloaded, extract the zip file
+3. Open IBM installation Manager in administrator mode
+4. Once above is opened > On Top left side click on "File" > click on "Preferences" > in the next opened window > click on "Add Repository" (Top Right side)
+5. Browse to the location of the extracted files in step 2 above and open it and select "repository.config" > click "Ok" > Click "Apply" > click "Ok" and
+proceed with installation by verifying the right components being selected from the subsequent pages > click "Next" once selected > Agree to license
+terms and click "Next" > choose the installation path > click "Next" > choose installation path for the IBM ELM application itself > click "Next" > choose
+language >> click "Next" > confirm again if all components to be installed are selected > click "Next" > In next window check the box indicating "Install
+with WAS liberty profile" > click "Next" > no need to change the context, so just click "Next" > don't tick "Enable Jazz Security Architecture SSO" for POC
+but tick this box for actuall GCC if instance of jazz authorization server is installed in the GCC network > then click "Next" and install.
+
+
+IBM WEBSPHERE APPLICATION SERVER IS INSTALLED AS PART OF THIS.
+
+
+UPDATING CONFIGURATIONS POST INSTALLATION:
+
+https://www.youtube.com/watch?v=cdccT-Net20
+
+IBM HTTP SERVER acts as a reverse proxy for IBM ELM application in PRODUCTION
+
+(CUSTOM SETUP)
+
+USER CREATION:
+
+https://www.youtube.com/watch?v=4u58O5R2Wdg
+
+
+CONFIGURING IBM HTTP SERVER TO SEND REQUESTS TO WAS LIBERTY:
+
+https://www.ibm.com/docs/en/ibm-http-server/9.0.5?topic=archive-configuring-http-server-liberty
+
+Proxy Jazz team server port 9944 with IBM HTTP server port 443 -- Server: Meaning is same as above
+
+
+
+
+SQL SERVER FOR AZURE VMs FOR INSTALLATION ON GCC:
+
+https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview?view=azuresql&viewFallbackFrom=sql-server-ver15
+
+
+
+For enabling pop ups
+
+Chrome > settings > privacy and security > site settings > pop ups and redirects > select "sites can send pop-ups and  use redirects"

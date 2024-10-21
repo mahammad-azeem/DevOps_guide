@@ -1,0 +1,8 @@
+
+
+Step 1. Create OIDC idp IAM role and assign web identity role to it with policy attached to it as indicated at url.
+https://docs.gitlab.com/ee/ci/cloud_services/aws/
+
+Step 2. Grab the ROLE_ARN from the above OIDC IAM role and configure in Gitlab > CI/CD > Variables > Key = ROLE_ARN and Value =  aws:moe-mci:developer::1365434TG:AWS... (role arn obtained from Step 1) 
+
+Step 3. Set up gitlab pipeline to use above ROLE_ARN using .invoke-aws-cli-.. template in SHIP-HATS innersource/GOV/shiphats/ templates

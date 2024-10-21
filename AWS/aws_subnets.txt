@@ -1,0 +1,6 @@
+AWS VPC/subnets
+
+If a subnet is associated with a route table that has route to internet gateway then it is called public subnet.
+In order to access the EC2 vms within the public subnet housed in the VP, the publich subnet route table must have a route to internet gateway (IPV4 0.0.0.0/0 and IPV6 ::/0) and the EC2 instance must a have a public IPV4 accessible from the internet.
+
+If a subnet is associated with a route table that doesnot have route to internet gateway then it is called private subnet.

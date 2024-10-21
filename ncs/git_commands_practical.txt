@@ -1,0 +1,41 @@
+  315  cd ..
+  316  cd GIT
+  317  git clone https://github/url/repo.git
+  318  cd DevOps_guide/
+  319  git branch test
+  320  git checkout test
+  321  git branch -a
+  322  mkdir ncs
+  323  cd ncs
+  324  vi test.log
+  325  git commit -m 'added dummy file' .
+  326  git add
+  327  git add .
+  328  git commit -m 'added dummy file'
+  329  git push
+  330  git push --set-upstream origin test
+  331  vi test.log
+  332  git commit -m 'adding line 2' .
+  333  git push --set-upstream origin test
+  334  vi test.log
+  335  git commit -m 'removed line 2' .
+  336  git push --set-upstream origin test
+  337  git branch -a
+  338  git checkout main
+  339  cd ..
+  340  ls -lrt
+  341  cd ncs/
+  342  ls -lrt
+  343  git pull
+  344  ls -lrt
+  345  git log -1
+  346  git log -5
+  347  git log -1
+  348  git tag -a R1 1281d4c283a -m 'my furst guthub tag'
+  349  git tag
+  350  git push --set-upstream origin test
+  351  git push --set-upstream origin R1
+  352  clear
+  353  git history
+  354  clear
+  355  history

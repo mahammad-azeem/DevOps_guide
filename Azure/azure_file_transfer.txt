@@ -1,0 +1,22 @@
+TRANSFER FILES FROM LOCAL TO INSIDE AZURE VM:
+
+Step 1: Look for azure resource "Storage accounts" and choose the type of storage account.
+Usually, to transfer files inside a vm in for uat environment select the uat storage account and for sit environment select
+sit storage account
+
+Step 2: In next window, expand "Data Storage" > "Containers" and create a container by clicking on "+ Container" from the
+top
+
+Step 3: In the next window, look for the container just created in above step and click on it. Configure "Permissions" >>
+select all  permissions indicated and choose the Start and expiry date/time, select Allowed protocols "HTTPS and HTTP"
+
+
+Step 4. Once done, Click on "Generate SAS Token and URL" present at the bottom and copy the url generate
+
+Step 5. Login to the vm where you want to upload the files to and run the command sudo azcopy cp "<URL_FROM_ABOVE_STEP>"
+"<path_to_download_the_file>" --recursive=true
+
+NOTE: azcopy utility must be present before running this command.
+for example:
+sudo azcopy cp "https://sahpbbcssuatiz.blob.core.windows.net/devops?sp=racwdli&st=2024-09-05T08:31:32Z&se=2024-09-08T16:
+31:32Z&sv=2022-11-02&sr=c&sig=TvKAfHMKIcL09%2BIVn35j%2BMfHPo1e6on5rq7BRIoAWuA%3D" "/tmp" --recursive=true
