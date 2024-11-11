@@ -112,7 +112,7 @@ grep -inlrRwvV switches meaning
 
 
 
--I = Ignore case-sensitivity ( small aayii )
+-i = Ignore case-sensitivity ( small aayii )
 
 -n = print line numbers
 
