@@ -227,8 +227,36 @@ Find files that belong to the user name mac
 
 
 
-find . -type f -name *.py -exec echo {} \;
+find . -type f -name *.py -exec echo {} \; >> prints files in new line
+EXAMPLE:
+NCS+P1351949@NAADA5CG2137BP3 MINGW64 ~/OneDrive - NCS PTE LTD/TRAININGS/DevOps/Python
+$ find . -type f -name '*.py' -exec echo {} \;
+./args.py
+./arithmetic_operators.py
+./exception.py
+./excercise.py
+./if.py
+./json_practive.py
+./list_cmpr.py
+./logical_operators.py
+./main.py
+./math_numbers.py
+./practice.py
+./practice_again.py
+./range.py
+./string_methods.py
+./ternary_operator.py
+./test.py
+./type_conversion.py
+./__pycache__/time_.py
 
+
+
+find . -type f -name *.py | xargs echo >> prints files in the same line
+EXAMPLE:
+NCS+P1351949@NAADA5CG2137BP3 MINGW64 ~/OneDrive - NCS PTE LTD/TRAININGS/DevOps/Python
+$ find . -type f -name '*.py' | xargs echo
+./args.py ./arithmetic_operators.py ./exception.py ./excercise.py ./if.py ./json_practive.py ./list_cmpr.py ./logical_operators.py ./main.py ./math_numbers.py ./practice.py ./practice_again.py ./range.py ./string_methods.py ./ternary_operator.py ./test.py ./type_conversion.py ./__pycache__/time_.py
 
 
 Find files whose name ends with .py from the present directory ( . ) and echo or print them to the console.
