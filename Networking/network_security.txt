@@ -1,0 +1,42 @@
+Networking:
+
+Forward proxy and Reverse Proxy
+
+https://www.youtube.com/watch?v=4NB0NDtOwIQ
+
+Forward Proxy:
+1. It sits between the client and the Internet
+2. Prevents from client's ip being exposed to internet
+3. Acts as firewall by blocking malicious websites
+
+Reverse proxy:
+1. Sits between the Internet and the web servers (serving the content)
+2. Prevents exposing the IP address of web servers
+3. SSL encryption can be handled only for the reverse proxy and no need to handle ssl encryption at the multiple web servers
+4. Acts a load balancer to distribute traffic.
+
+
+SSL Certificate:
+
+https://www.youtube.com/watch?v=0yw-z6f7Mb4
+
+Root certificate
+	Intermediate certificate
+				Server certificate
+
+All the above 3 certificates must be imported into java truststore/keystore in order to verify the website as ssl enabled
+				
+				
+GENERATING SELF SIGNED SSL CERTIFICATE:
+https://www.youtube.com/watch?v=wzbf9ldvBjM&t=584s
+
+Step 1. Generate a key file using openssl utility
+>> openssl genrsa -out keyfile_name.key 2048
+
+Step 2. Use this key to generate a Certificate Signing Request (CSR)
+>> openssl req -new -key keyfile_name.key -out keyfile_name.csr
+
+(Verify above .csr using command: openssl req -text -in keyfile_name.csr -noout -verify)
+
+Step 3. Use the above CSR to generate a Self signed ssl certificate(.crt)
+>> openssl x509 -in keyfile_name.csr -out keyfile_name.crt -key keyfile_name.key -req -days 365
