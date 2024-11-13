@@ -1,0 +1,18 @@
+Associating DNS to Azure Load Balancer:
+Reference:
+https://www.youtube.com/watch?v=y9JMK1CGQ2w
+
+
+Step 1. Your Load Balancer must have a Public Ip address assigned. If not then Login go to Azure portal and create a public ip address and associate it to the load balancer.
+
+Step 2. Get or Register your domain from any of the online providers like go daddy, etc
+Example:  devopsazure.com
+
+Step 3. Go to Azure portal > DNS Zone > Create new zone and add the dns name "devopsazure.com". Once added this will give a list of Name servers.
+
+Step 4. Go to your domain provider in Step 1. and navigate to > DNS > Name servers.
+Add all the Name servers from Step 2 here.
+
+Step 5. Go to Azure portal > Public Ip address > configuration (left hand pane) > Create alias record > choose the "DNS Zone" name created in Step 3.
+
+Step 6. Enter the devopsazure.com url in the browser. It should load your webpage from the configured web servers added in the backend pool of your load balancer.
