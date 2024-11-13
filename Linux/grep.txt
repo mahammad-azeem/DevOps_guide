@@ -2,12 +2,12 @@ if with switches:
 
 if  test -f "filename.txt"; then echo "File exists"; else echo "Files doesnt not exists";fi  >> -e check if file exists
 
-if test -z "series.json"; then echo "size of the file is not zero"; else echo "size of the file is zero"; fi >> -z file not empty
+if test -s "series.json"; then echo "size of the file is not zero"; else echo "size of the file is zero"; fi >> -z file not empty
 
 if test -d "folder1"; then echo "Folder exists"; else echo "Folder does not exists"; fi >> -d folder exists
 
 var="Hello"
-if test -s "$var"; then echo "var is empty"; else echo "var is empty"; fi >> -s string empty
+if test -z "$var"; then echo "var is empty"; else echo "var is empty"; fi >> -s string empty
 
 Grep:
 
