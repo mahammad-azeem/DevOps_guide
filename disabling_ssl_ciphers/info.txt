@@ -1,0 +1,12 @@
+DISABLING CIPHERS IN AN APPLICATION SERVER:
+
+1. Find the java.security file from the Java installation path of the application server (If the application has built-in java change in    that path) having the ciphers vulnerability
+2. take back up of the java.security file
+3. Open java.security and edit the value jdk.tls.disabledAlgorthims=RSA, DSA, ECDH-RSA-AES128-SHA, \
+																	ECDH-RSA-AES256-SHA
+																	
+	(you need to enter the name of the cipher)
+4. Verify if the cipher is disabled by running the below command
+	openssl s_client -connect ip:port -cipher <name of the cipher>
+	for example:
+	openssl s_client -connect ip:port -cipher ECDH-RSA-AES128-SHA
