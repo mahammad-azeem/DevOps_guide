@@ -1,0 +1,15 @@
+Route Table:
+These define how the network traffic to be controlled within VPC.
+By default, all subnets within the VPC will have a default route table associated which enables the communication between 
+different subnets within the VPC by default. In order to enforce control on traffic between subnets within the same VPC you need 
+security groups and Network Access Control Lists.
+
+Security Group:
+These define the traffic that can be reached to and from the AWS resources like EC2, DynamoDB etc
+They acts as firewall to prevent the traffic reaching to and from the AWS resources.
+
+Network Access Control Lists (NACLs):
+These defines to act as firewall at subnet level. Meaning, just like you how Security Groups acts as firewall at the AWS resource 
+level to prevent traffic reaching to and from the AWS resources(like EC2, DynamoDB etc), the NACLs acts as firewall to allow/deny
+traffic at subnet level
+
