@@ -1,0 +1,50 @@
+Terraform init:
+
+Downloads are required dependencies, packages, installers etc defined in the providers/ resources
+
+Terraform plan:
+
+It performs a dry run and show a plan of what will be created. The resources and lines with + green symbol means this will be created
+and the resources and lines with - red symbol means this will be deleted
+
+
+Terraform show -json tf.tfplan > tf.json
+
+This command is used to show human readable format of terraform plan
+
+
+Terraform state file: (not a command)
+this file contains the state of current remote objects/infrastructure
+
+Terraform plan -refresh-only:
+This will show the objects/resources whose state is captured in the terraform.tfstate file but have been modified directly/manaully outside of terraform. and those changes
+will be applied/updated in terraform.tfstate file.
+
+For example:
+Assume I launched an AWS EC2 instance using terraform. This gets recorded in the tfstate file. Later after sometime, i will delete this EC2 instance from the AWS console
+(outside of terraform).
+Now, running terraform plan -refresh-only, will show the changes dones outside of terraform , which is the output shows that AWS EC2 related contents in the tfstate file will
+be deleted.
+
+Terraform apply -refresh-only:
+This will actually apply the changes to the tfstatefile without actually modifying the remote objects/AWS resources.
+
+
+
+Using the commands inside from a CI/CD pipleine:
+
+1. terraform init
+
+2. terraform plan -out=tf.tfplan
+
+3. terraform show -json tf.tfplan > tfplan.json
+
+4. checkov -f tfplan.json > scanreport.txt
+
+artifacts:
+	when: always
+	paths:
+	 - $CI_PROJECT_DIR
+	expire_in: 1mos
+
+5. terraform apply tf.tfplan
