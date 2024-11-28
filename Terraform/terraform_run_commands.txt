@@ -57,6 +57,9 @@ This command is same as : terraform destroy
 
 difference is terraform apply destory will ask for a yes or no prompt to proceed to apply changes where is terraform destroy will directly modify the  resources.
 
+Terraform apply -auto-approve:
+This command will executed terraform apply but it will not ask for yes or no confirmation. Meaning, it will directly go ahead and apply the changes by skipping the confirmation for yes or no
+
 Using the commands inside from a CI/CD pipleine:
 
 1. terraform init
