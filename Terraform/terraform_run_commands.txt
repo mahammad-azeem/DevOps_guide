@@ -48,6 +48,15 @@ example:
 Terraform apply -replace aws_ec2.instance
 
 
+Terraform plan destroy:
+This command will dry run/show the resources that will be destroyed/deleted in the remote/AWS/Cloud
+
+Terraform apply destroy:
+This command will actually destroy/delete the resources in the remote/AWS/Cloud
+This command is same as : terraform destroy
+
+difference is terraform apply destory will ask for a yes or no prompt to proceed to apply changes where is terraform destroy will directly modify the  resources.
+
 Using the commands inside from a CI/CD pipleine:
 
 1. terraform init
