@@ -30,6 +30,23 @@ Terraform apply -refresh-only:
 This will actually apply the changes to the tfstatefile without actually modifying the remote objects/AWS resources.
 
 
+Terraform apply:
+This actually apply the changes indicated in the terraform plan output or tf.tfplan file
+(Note you cannot read or open tf.tfplan file as its a binary . u need to convert it to human readable format using "terraform show -json tf.tfplan > tf.json")
+
+
+Terraform plan -replace resource_name:
+This command will show the dry run of replacing the resource
+
+example:
+Terraform plan -replace aws_ec2.instance
+
+Terraform apply -replace resource_name
+This command will actually replace the resources in the remote/AWS/Cloud
+
+example:
+Terraform apply -replace aws_ec2.instance
+
 
 Using the commands inside from a CI/CD pipleine:
 
