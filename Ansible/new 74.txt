@@ -8,7 +8,7 @@
     package:
 	 name: '{{item}}'
 	 state: '{{package_state}}'
-	with_item: '{{packages}}'
+	with_items: '{{packages}}'
 	when: ansible_os_family == 'debian'
 	tags: [deploy, event]
 	
