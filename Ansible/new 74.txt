@@ -1,0 +1,70 @@
+---
+
+- hosts: all
+  variables:
+   packages: [git, vim, python]
+  tasks:
+  - name: "intall packages"
+    package:
+	 name: '{{item}}'
+	 state: '{{package_state}}'
+	with_item: '{{packages}}'
+	when: ansible_os_family == 'debian'
+	tags: [deploy, event]
+	
+  - name: "Create file for each package if doesnt exists"
+    file:
+	 dest: '{{item}}'
+	 state: '{{file_state}}'
+	with_items: '{{packages}}'
+	tags: [post-deploy, pre-deploy]
+	
+ANSIBLE PLAYBOOK COMMANDS:
+
+ansible-playbook -i ../../inventory playbook.yml -e file_state='touch' -e package_state='latest' --skip-tags=post-deploy
+
+ansible-playbook -i ../../inventory playbook.yml -e file_state='touch' -e package_state='latest' --tags=deploy
+
+ANSIBLE ADHOC COMMANDS
+
+ansible -i ../inventory -m ping
+
+ansible -i ../inventory -m gather_facts
+
+ansible -i ../inventory -m copy -a "src='' dest=''"
+
+ansile -i ../inventory -m file -a "dest=/tmp/file.log state=touch"
+
+
+ANSIBLE ROLES:
+###############folder structure for ansible roles
+bash-5.2$ find roles | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"
+roles
+ |-app_servers
+ | |-tasks
+ | | |-main.yml
+ |-db_servers
+ | |-tasks
+ | | |-main.yml
+
+################Below is the main file
+---
+
+- hosts: app
+  become: true
+  roles:
+    - app_servers
+
+- hosts: db
+  become: true
+  roles:
+    - db_servers
+
+
+ANSIBLE.CFG file:
+
+bash-5.2$ cat ansible.cfg
+[defaults]
+inventory = /etc/hosts
+private_key_file = ~/.ssh/ansible
+bash-5.2$
