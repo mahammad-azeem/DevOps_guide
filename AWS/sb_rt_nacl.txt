@@ -1,5 +1,5 @@
 Route Table:
-These define how the network traffic to be controlled within VPC.
+These define how the network traffic to be controlled at subnets level.
 By default, all subnets within the VPC will have a default route table associated which enables the communication between 
 different subnets within the VPC by default. In order to enforce control on traffic between subnets within the same VPC you need 
 security groups and Network Access Control Lists.
