@@ -9,7 +9,7 @@ These define the traffic that can be reached to and from the AWS resources like 
 They acts as firewall to prevent the traffic reaching to and from the AWS resources.
 
 Network Access Control Lists (NACLs):
-These defines to act as firewall at subnet level. Meaning, just like you how Security Groups acts as firewall at the AWS resource 
+These defines to act as firewall and is an optional layer of security at VPC level. Meaning, just like you how Security Groups acts as firewall at the AWS resource 
 level to prevent traffic reaching to and from the AWS resources(like EC2, DynamoDB etc), the NACLs acts as firewall to allow/deny
-traffic at subnet level
+traffic in one or more subnet level
 
